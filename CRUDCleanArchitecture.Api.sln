@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "CRUDCleanArchitecture.Api\src\Api\API.csproj", "{AEF8EBEC-998D-4A99-B39B-0FFD168640A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "CRUDCleanArchitecture.Api\src\Application\Application.csproj", "{30EC2CE5-901E-45D9-A0C9-19F15762FD96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "CRUDCleanArchitecture.Api\src\Domain\Domain.csproj", "{B6BE7CE5-9670-47B3-8108-3BAE7F511CB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "CRUDCleanArchitecture.Api\src\Infrastructure\Infrastructure.csproj", "{B4C9489F-B290-4707-83E0-BF5D0AACE219}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{15B26DA2-CDDE-4B1D-8A87-5975DDBD705D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "CRUDCleanArchitecture.Api\test\Test.csproj", "{E54965E4-D032-46B0-B96E-DF098F00779E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEF8EBEC-998D-4A99-B39B-0FFD168640A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF8EBEC-998D-4A99-B39B-0FFD168640A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF8EBEC-998D-4A99-B39B-0FFD168640A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF8EBEC-998D-4A99-B39B-0FFD168640A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30EC2CE5-901E-45D9-A0C9-19F15762FD96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30EC2CE5-901E-45D9-A0C9-19F15762FD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30EC2CE5-901E-45D9-A0C9-19F15762FD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30EC2CE5-901E-45D9-A0C9-19F15762FD96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BE7CE5-9670-47B3-8108-3BAE7F511CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BE7CE5-9670-47B3-8108-3BAE7F511CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BE7CE5-9670-47B3-8108-3BAE7F511CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BE7CE5-9670-47B3-8108-3BAE7F511CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C9489F-B290-4707-83E0-BF5D0AACE219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C9489F-B290-4707-83E0-BF5D0AACE219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C9489F-B290-4707-83E0-BF5D0AACE219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C9489F-B290-4707-83E0-BF5D0AACE219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B26DA2-CDDE-4B1D-8A87-5975DDBD705D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B26DA2-CDDE-4B1D-8A87-5975DDBD705D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B26DA2-CDDE-4B1D-8A87-5975DDBD705D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B26DA2-CDDE-4B1D-8A87-5975DDBD705D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54965E4-D032-46B0-B96E-DF098F00779E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54965E4-D032-46B0-B96E-DF098F00779E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54965E4-D032-46B0-B96E-DF098F00779E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54965E4-D032-46B0-B96E-DF098F00779E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77BBE17B-0A6C-447D-B4D2-CA4D161FD483}
+	EndGlobalSection
+EndGlobal

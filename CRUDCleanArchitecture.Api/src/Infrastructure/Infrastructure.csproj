@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>CRUDCleanArchitecture.Infrastructure</RootNamespace>
+        <AssemblyName>CRUDCleanArchitecture.Infrastructure</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="Confluent.Kafka" Version="2.3.0" />
+        <PackageReference Include="CsvHelper" Version="30.0.1" />
+        <PackageReference Include="Dapper" Version="2.0.138" />
+        <PackageReference Include="Elasticsearch.Net" Version="7.17.5" />
+        <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="7.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
+        <PackageReference Include="NEST" Version="7.17.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Application\Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Persistence\Migrations\" />
+    </ItemGroup>
+
+</Project>
