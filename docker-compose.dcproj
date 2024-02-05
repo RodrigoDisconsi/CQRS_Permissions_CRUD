@@ -7,6 +7,7 @@
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>api</DockerServiceName>
+	<DockerComposeProjectName>cqrs_permission_container</DockerComposeProjectName> 
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
