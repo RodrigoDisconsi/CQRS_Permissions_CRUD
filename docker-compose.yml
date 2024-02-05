@@ -17,8 +17,6 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.17
     ports:
         - 9200:9200
-    volumes:
-        - elasticsearch-data:/usr/share/elasticsearchdata
     environment:
         - xpack.security.enabled=false
         - discovery.type=single-node
@@ -47,13 +45,15 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
     ports:
       - "9092:9092"
+
   api:
+    container_name: api
     image: ${DOCKER_REGISTRY-}api
     build:
-      context: .
-      dockerfile: CRUDCleanArchitecture.Api/src/Api/Dockerfile
+      context: CRUDCleanArchitecture.Api/src/
+      dockerfile: Api/Dockerfile
+    ports:
+      - "8088:80"
 
 volumes:
-  elasticsearch-data:
   sql-data:
-  

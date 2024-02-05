@@ -17,6 +17,7 @@ public class PermissionDto : IMapFrom<PermissionView>
                .ForMember(dst => dst.TipoPermiso, opt => opt.MapFrom(x => new PermissionTypeDto { TipoPermisoId = x.TipoPermisoId, Descripcion = x.Descripcion}));
 
         profile.CreateMap<PermissionDto, Permiso>()
+                .ForMember(dst => dst.Id, opt => opt.MapFrom(x => x.PermisoId))
                 .ForMember(dst => dst.TipoPermisoId, opt => opt.MapFrom(x => x.TipoPermiso.TipoPermisoId))
                 .ForMember(dst => dst.TipoPermiso, opt => opt.MapFrom(x => new TipoPermiso { Id = x.TipoPermiso.TipoPermisoId, Descripcion = x.TipoPermiso.Descripcion }));
     }

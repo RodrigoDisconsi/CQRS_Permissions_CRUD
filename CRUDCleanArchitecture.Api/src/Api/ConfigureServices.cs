@@ -10,14 +10,14 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
     {
-        var CorsAllowedOrigins = "AllowSpecificOrigins";
+        var corsAllowedOrigins = "AllowSpecificOrigins";
         services.AddControllers(options =>
         {
             options.Filters.Add<ApiExceptionFilterAttribute>();
         });
         services.AddCors(options =>
         {
-            options.AddPolicy(name: CorsAllowedOrigins,
+            options.AddPolicy(name: corsAllowedOrigins,
                               builder =>
                               {
                                   var origins = configuration.GetValue<string>("CorsOrigins").Split(",");

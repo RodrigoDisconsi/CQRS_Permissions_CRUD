@@ -17,13 +17,11 @@ public class PermissionService : IPermissionService
     private readonly ILogger<PermissionService> _logger;
     private readonly MapperConfiguration _mapperConfigurator;
     private readonly IMapper _mapper;
-    private readonly IElasticService _elastic;
 
-    public PermissionService(IApplicationDbContext context, IElasticService elastic, ILogger<PermissionService> logger)
+    public PermissionService(IApplicationDbContext context, ILogger<PermissionService> logger)
     {
         _context = context;
         _logger = logger;
-        _elastic = elastic;
         _mapperConfigurator = InitMapperConfigurator();
         _mapper = _mapperConfigurator.CreateMapper();
     }
@@ -40,8 +38,6 @@ public class PermissionService : IPermissionService
             await _context.Permisos.AddAsync(permission);
 
             await _context.SaveChangesAsync(cancellationToken);
-
-            _elastic.IndexDocument(permission);
 
             return await Response<RequestPermissionResponse>.SuccessAsync(new RequestPermissionResponse() { PermisoId = permission.Id });
         }
@@ -69,8 +65,6 @@ public class PermissionService : IPermissionService
             permission.TipoPermisoId = request.TipoPermisoId;
 
             await _context.SaveChangesAsync(cancellationToken);
-
-            _elastic.IndexDocument(permission);
 
             return await Response<ModifyPermissionResponse>.SuccessAsync();
         }

@@ -3,7 +3,6 @@ version: '3.4'
 services:
   api:
     image: api:dev
-    container_name: "API"
     build:
       target: base
       labels:
@@ -15,7 +14,7 @@ services:
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
       - C:\Rodri\CRUDCleanArchitecture\CRUDCleanArchitecture.Api\src\Api:/app
-      - C:\Rodri\CRUDCleanArchitecture:/src
+      - C:\Rodri\CRUDCleanArchitecture\CRUDCleanArchitecture.Api\src:/src
       - C:\Users\RodrigoDisconsi\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\RodrigoDisconsi\.nuget\packages\:/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/.nuget/fallbackpackages:ro

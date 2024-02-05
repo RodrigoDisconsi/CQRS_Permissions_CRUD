@@ -7,11 +7,13 @@ namespace CRUDCleanArchitecture.Application.Permisos.EventHandlers;
 public class PermissionCreatedEventHandler : INotificationHandler<PermissionCreatedEvent>
 {
     private readonly IKafkaService _kafkaService;
+    private readonly IElasticService _elasticsearchService;
     private readonly ILogger<PermissionCreatedEventHandler> _logger;
 
-    public PermissionCreatedEventHandler(IKafkaService kafkaService, ILogger<PermissionCreatedEventHandler> logger)
+    public PermissionCreatedEventHandler(IKafkaService kafkaService, IElasticService elasticsearchService, ILogger<PermissionCreatedEventHandler> logger)
     {
         _kafkaService = kafkaService;
+        _elasticsearchService = elasticsearchService;
         _logger = logger;
     }
 
@@ -21,7 +23,8 @@ public class PermissionCreatedEventHandler : INotificationHandler<PermissionCrea
         {
             _logger.LogInformation("Domain Event: {DomainEvent}", notification.GetType().Name);
 
-            await _kafkaService.SendMessageAsync("request");;
+            await _kafkaService.SendMessageAsync("request");
+            _elasticsearchService.IndexDocument(notification.Permiso);
 
         }
         catch(Exception ex)

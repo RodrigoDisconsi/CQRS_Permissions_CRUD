@@ -7,11 +7,13 @@ namespace CRUDCleanArchitecture.Application.Permisos.EventHandlers;
 public class PermissionModifyEventHandler : INotificationHandler<PermissionModifyEvent>
 {
     private readonly IKafkaService _kafkaService;
+    private readonly IElasticService _elasticsearchService;
     private readonly ILogger<PermissionModifyEventHandler> _logger;
 
-    public PermissionModifyEventHandler(IKafkaService kafkaService, ILogger<PermissionModifyEventHandler> logger)
+    public PermissionModifyEventHandler(IKafkaService kafkaService, IElasticService elasticsearchService, ILogger<PermissionModifyEventHandler> logger)
     {
         _kafkaService = kafkaService;
+        _elasticsearchService = elasticsearchService;
         _logger = logger;
     }
 
@@ -20,5 +22,6 @@ public class PermissionModifyEventHandler : INotificationHandler<PermissionModif
         _logger.LogInformation("CRUDCleanArchitecture Domain Event: {DomainEvent}", notification.GetType().Name);
 
         await _kafkaService.SendMessageAsync("modify");
+        _elasticsearchService.IndexDocument(notification.Permiso);
     }
 }

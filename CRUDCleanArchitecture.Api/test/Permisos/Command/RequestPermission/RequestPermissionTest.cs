@@ -113,7 +113,7 @@ namespace ApplicationTest.Permisos.Command.RequestPermission
                 var mockLogger = new Mock<ILogger<PermissionService>>();
                 var mockElastic = new Mock<IElasticService>();
 
-                var permissionService = new PermissionService(context, mockElastic.Object, mockLogger.Object);
+                var permissionService = new PermissionService(context, mockLogger.Object);
 
                 // Act
                 var response = await permissionService.RequestPermission(request, cancellationToken);

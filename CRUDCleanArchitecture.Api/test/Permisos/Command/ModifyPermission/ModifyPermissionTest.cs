@@ -115,7 +115,7 @@ namespace ApplicationTest.Permisos.Command.ModifyPermission
             // Act
             using (var context = new ApplicationDbContext(_options, mockMediator.Object))
             {
-                var permissionService = new PermissionService(context, mockElastic.Object, mockLogger.Object);
+                var permissionService = new PermissionService(context, mockLogger.Object);
                 var response = await permissionService.UpdatePermission(request, cancellationToken);
 
                 // Assert
